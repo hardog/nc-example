@@ -1,0 +1,4 @@
+# ignore nodejs install module
+node_modules/
+
+*.log

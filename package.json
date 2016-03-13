@@ -1,0 +1,24 @@
+{
+  "name": "nc-example",
+  "version": "1.0.0",
+  "description": "a example for nodejs mock nodeclub(nc)",
+  "main": "app.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "nodeclub",
+    "nodejs",
+    "example"
+  ],
+  "dependencies": {
+    "log4js": "^0.6.33",
+    "mongoose": "4.4.7"
+  },
+  "devDependencies": {
+    "chai": "^3.5.0",
+    "mocha": "2.4.5"
+  },
+  "author": "Frand",
+  "license": "MIT"
+}
