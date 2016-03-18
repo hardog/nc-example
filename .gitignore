@@ -2,3 +2,6 @@
 node_modules/
 
 *.log
+
+# ignore mysql model
+models/mysql/*.js
