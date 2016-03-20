@@ -1,2 +1,2 @@
-# nc-example
-an example mock nodeclub except some new features
+## NC-EXAMPLE
+an simple nodeclub example project realize by koa
