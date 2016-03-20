@@ -4,6 +4,11 @@
  *  config file
  */
 let config = {
+    // site basic information
+    title: 'nc-example',
+    description: 'just a koa nodeclub example',
+    keywords: 'koa, es6, nodeclub',
+
     // use dialect
     useDialect: 'mongodb',
 

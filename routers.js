@@ -1,13 +1,18 @@
 'use strict';
 
-let router = require('koa-router')();
+let router = require('koa-router')(),
+	config = require('./config');
 
 module.exports = router.routes();
 
-router.get('/user', function* (){
-	this.body = 'this is user get';
-});
+// router.get('/user', function* (){
+// 	yield this.render('user', {
+// 		name: 'ncuzp'
+// 	});
+// });
 
 router.get('/', function* (){
-	this.body = 'this is index.html';
+	yield this.render('index', {
+		config: config
+	});
 });
