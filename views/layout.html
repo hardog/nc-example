@@ -2,7 +2,14 @@
 <%- include('partial/nav.html', {config: config}) %>
 
 <body>
-<%- body %>
+	<div class="wrap">
+		<div class="content">
+			<%- body %>
+		</div>
+		<div class="sidebar">
+			<%- include('partial/sidebar.html', {}) %>
+		</div>
+	</div>
 </body>
 
 <%- include('partial/foot.html', {}) %>
