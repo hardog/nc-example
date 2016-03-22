@@ -14,6 +14,13 @@ router.get('/', function* (){
 router.get('/registry', function* (){
 	yield this.render('registry', {
 		config: config,
-		type: '注册111'
+		name: 'get'
+	});
+});
+
+router.post('/registry', function* (){
+	yield this.render('registry', {
+		config: config,
+		name: 'post'
 	});
 });
