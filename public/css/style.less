@@ -4,6 +4,7 @@ body{
 	font-size: 16px;
 	background-color: #e1e1e1;
 	box-sizing: border-box;
+	font-family: "Helvetica Neue","Luxi Sans","DejaVu Sans",Tahoma,"Hiragino Sans GB",STHeiti!important;
 }
 
 // wrap to left & right
@@ -18,6 +19,7 @@ body{
 .content{
 	display: table-cell;
 	box-sizing: inherit;
+	vertical-align: top;
 }
 
 // sidebar
@@ -25,6 +27,25 @@ body{
 	display: table-cell;
 	width: 300px;
 	box-sizing: inherit;
+
+	.introBox{
+	    background-color: #fff;
+	    padding: 10px;
+	    border-radius: 4px;
+
+	    p{
+	    	padding: 0;
+		    margin: 0 0 10px 0;
+	    }
+
+    	.fns{
+    		span{
+			    display: inline-block;
+			    width: 100%;
+			    font-style: italic;
+    		}
+    	}
+	}
 }
 
 // nav style
@@ -71,36 +92,56 @@ body{
 // registry
 .registry{
 	margin-right: 20px;
-	padding: 10px 20px;
+	padding: 40px 20px;
 	background-color: #fff;
 	border-radius: 3px;
+	font-size: 14px;
 
 	label{
 		width: 100%;
 		display: inline-block;
-		padding: 5px;
-	    font-size: 20px;
+		padding: 10px;
 
 		span{
-		    display: inline-block;
 		    width: 120px;
+			color: #333;
+		    display: inline-block;
 	        margin-right: 20px;
 		    text-align: right;
 		}
 
-	    input{
-	    	font-size: 20px;
+	    textarea,input{
+	    	width: 270px;
+	    	border-radius: 4px;
+    	    line-height: 20px;
+		    color: #555;
+		    padding: 4px 6px;
+		    background: hsla(0,0%,0%,0);
+		    border: 1px solid #ccc;
+		    box-shadow: inset 0 1px 1px rgba(0,0,0,.075);
 	    }
 
-	    textarea{
+		input{
+	    	height: 20px;
+	    }
+
+	    .offset{
 	    	margin-left: 140px;
 		    margin-top: -20px;
 	    }
 	}
 
 	.registryUser{
-	    margin-left: 140px;
-	    font-size: 20px;
+	    margin-left: 150px;
+	    border-radius: 3px;
+	    background-color: #08c;
+	    padding: 3px 10px;
+	    color: #fff;
+	    border: none;
+	    cursor: pointer;
+	    line-height: 28px;
+	    width: 80px;
+        font-size: inherit;
 	}
 }
 
