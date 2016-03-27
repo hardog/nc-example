@@ -2,27 +2,27 @@
 	<form action="/registry" method="post">
 		<label>
 			<span>姓名</span>
-			<input type="text" id="username"/>
+			<input type="text" name="username"/>
 		</label>
 		<label>
 			<span>登录名</span>
-			<input type="text" id="loginname"/>
+			<input type="text" name="loginname"/>
 		</label>
 		<label>
 			<span>Email</span>
-			<input type="text" id="email"/>
+			<input type="text" name="email"/>
 		</label>
 		<label>
 			<span>密码</span>
-			<input type="password" id="password"/>
+			<input type="password" name="password"/>
 		</label>
 		<label>
 			<span>确认密码</span>
-			<input type="password" id="confirmpass"/>
+			<input type="password" name="confirmpass"/>
 		</label>
 		<label>
 			<span>签名</span><br/>
-			<textarea id="signature" cols="60" rows="6" class="offset"></textarea>
+			<textarea name="signature" cols="60" rows="6" class="offset"></textarea>
 		</label>
 		<input type="submit" value="注册" class="registryUser"/>
 	</form>

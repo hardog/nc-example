@@ -5,14 +5,15 @@ let koa = require('koa'),
 	send = require('koa-send'),
 	less = require('koa-less'),
 	mount = require('koa-mount'),
+	koabody = require('koa-body'),
 	router = require('koa-router')(),
 	log = require('koa-request-log'),
 	render = require('koa-ejs'),
 	app = koa();
+// https://github.com/dlau/koa-body
+let publicPath = path.join(__dirname, 'public');
 
-let routes = require('./routers'),
-	publicPath = path.join(__dirname, 'public');
-
+let routes = require('./routers');
 // TODO 加上缓存
 
 // add view render
@@ -30,14 +31,16 @@ app
 .use(less('public', {
 	dest: publicPath
 }))
+.use(koabody())
 .use(mount(routes))
+.use(mount(router.allowedMethods()))
 .use(function* (){
 	yield send(this, this.path, {
 		root: publicPath
 	});
-})
-.use(mount(router.allowedMethods()));
+});
 
+// listen on port 3000
 app.listen(3000);
 
 require('colors');
