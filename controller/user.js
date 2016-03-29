@@ -17,8 +17,14 @@ exports.registry = function* (){
 		pass = req.password,
 		signature = req.signature;
 
-	yield this.render('registry', {
-		config: config,
-		user: {name:'Frand'}
-	});
+	let user = new User();
+
+	user.name = uname;
+	user.loginname = loginname;
+	user.password = pass;
+	user.email = email;
+	user.signature = signature;
+
+	yield user
+	.save();
 };

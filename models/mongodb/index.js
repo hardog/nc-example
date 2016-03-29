@@ -1,8 +1,7 @@
 'use strict';
 
 let mongoose = require('mongoose'),
-	config   = require('../../config'),
-	logger = require('../../common/logger');
+	config   = require('../../config');
 
 /**
  * mongodb connect by mongoose
@@ -14,16 +13,16 @@ mongoose.connect(config.mongodb.db, {
   }
 }, (err) => {
   if (err) {
-    logger.error('connect to %s error: ', config.mongodb.db, err.message);
+    console.error('connect to %s error: ', config.mongodb.db, err.message);
     process.exit(1);
   }
 });
 
 // models
-require('./mongodb/user');
-require('./mongodb/topic');
-require('./mongodb/reply');
-require('./mongodb/message');
+require('./user');
+require('./topic');
+require('./reply');
+require('./message');
 
 exports.User         = mongoose.model('User');
 exports.Topic        = mongoose.model('Topic');

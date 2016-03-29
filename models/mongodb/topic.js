@@ -1,8 +1,8 @@
 'use strict';
 
 let mongoose  = require('mongoose'),
-	ObjectId  = Schema.ObjectId,
-	Schema    = mongoose.Schema;
+	Schema    = mongoose.Schema,
+	ObjectId  = Schema.ObjectId;
 
 let topicSchema = new Schema({
   title: String,

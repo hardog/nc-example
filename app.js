@@ -31,6 +31,14 @@ app
 .use(less('public', {
 	dest: publicPath
 }))
+.use(function* (next){
+	try{
+		yield* next;
+	}catch(err){
+		console.log('err happen', err);
+		this.body = err;
+	}
+})
 .use(koabody())
 .use(mount(routes))
 .use(mount(router.allowedMethods()))
@@ -39,6 +47,12 @@ app
 		root: publicPath
 	});
 });
+
+// app.on('error', function(err){
+// 	this.status = '200';
+// 	this.body = err;
+// 	// this.render('registry', {config: err});
+// });
 
 // listen on port 3000
 app.listen(3000);

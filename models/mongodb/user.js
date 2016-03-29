@@ -8,8 +8,9 @@ let userSchema = new Schema({
 	loginname: String,
 	password: String,
 	createAt: {type: Date, default: Date.now},
+	signature: String,
 	email: String,
-	isBlock: Boolean
+	isBlock: {type: Boolean, default: false}
 });
 
 // define user schema index
