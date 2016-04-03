@@ -3,9 +3,13 @@
 	<div class="nav-items">
 		<ul>
 			<li><a href="/">首页</a></li>
-			<li><a href="/user">个人信息</a></li>
-			<li><a href="/registry">注册</a></li>
+			<% if(user && user.isLogin){ %>
+			<li><a href="/user/<%= user.loginname %>"><%= user.name %></a></li>
 			<li><a href="/logout">退出</a></li>
+			<% }else{ %>
+			<li><a href="/login">登录</a></li>
+			<li><a href="/registry">注册</a></li>
+			<% } %>
 		</ul>
 	</div>
 </div>

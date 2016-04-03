@@ -13,5 +13,7 @@ module.exports = router.routes();
 
 router
 .get('/', index.showIndex)
+.get('/login', user.showLogin)
+.post('/login', user.login)
 .get('/registry', user.showRegistry)
 .post('/registry', user.registry);

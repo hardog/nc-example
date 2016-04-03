@@ -1,5 +1,5 @@
 <%- include('partial/head.html', {config: config}) %>
-<%- include('partial/nav.html', {config: config}) %>
+<%- include('partial/nav.html', {config: config, user: locals.user || {}}) %>
 
 <body>
 	<div class="wrap">
