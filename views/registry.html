@@ -1,5 +1,5 @@
 <div class="registry">
-	<% if(!isSuccess){ %>
+	<% if(!locals.user){ %>
 	<form action="/registry" method="post">
 		<label>
 			<span>姓名</span>
@@ -27,7 +27,5 @@
 		</label>
 		<input type="submit" value="注册" class="registryUser"/>
 	</form>
-	<% }else{ %>
-		<div class="registrySuccess">恭喜你注册成功!</div>
 	<% } %>
 </div>

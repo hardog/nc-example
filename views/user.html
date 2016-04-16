@@ -1,1 +1,12 @@
-user
+<div>
+<% if(locals.user){ %>
+<h3>用户名称</h3>
+<%= user.name %>
+<h3>邮箱</h3>
+<%= user.email %>
+<h3>用户签名</h3>
+<%= user.signature %>
+<% }else{ %>
+对不起, 请先登录!
+<% } %>
+</div>

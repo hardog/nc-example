@@ -6,6 +6,7 @@ let koa = require('koa'),
 	less = require('koa-less'),
 	mount = require('koa-mount'),
 	koabody = require('koa-body'),
+	session = require('koa-session'),
 	router = require('koa-router')(),
 	log = require('koa-request-log'),
 	render = require('koa-ejs'),
@@ -24,6 +25,9 @@ render(app, {
   debug: true
 });
 
+// for cookie
+app.keys = ['keys'];
+
 // 绑定路由地址
 app
 .use(log())
@@ -31,6 +35,7 @@ app
 	dest: publicPath
 }))
 .use(errors)
+.use(session(app))
 .use(koabody())
 .use(mount(routes))
 .use(mount(router.allowedMethods()))

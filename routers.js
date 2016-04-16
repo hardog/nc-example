@@ -13,7 +13,10 @@ module.exports = router.routes();
 
 router
 .get('/', index.showIndex)
+// 用户相关
 .get('/login', user.showLogin)
 .post('/login', user.login)
 .get('/registry', user.showRegistry)
-.post('/registry', user.registry);
+.post('/registry', user.registry)
+.get('/logout', user.logout)
+.get('/user/:id', user.userInfo);

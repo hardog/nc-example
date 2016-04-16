@@ -1,5 +1,5 @@
 <div class="registry">
-	<% if(!isSuccess){ %>
+	<% if(!locals.user){ %>
 	<form action="/login" method="post">
 		<label>
 			<span>登录名</span>
@@ -9,10 +9,8 @@
 			<span>密码</span>
 			<input type="password" name="password"/>
 		</label>
-		<% if(locals.msg){ %><label class="loginNote"><%= msg %></label><% } %>
+		<% if(locals.errMsg){ %><label class="loginNote"><%= errMsg %></label><% } %>
 		<input type="submit" value="登录" class="userLogin"/>
 	</form>
-	<% }else{ %>
-		<div class="loginSuccess">登录成功!</div>
 	<% } %>
 </div>
