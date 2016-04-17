@@ -22,9 +22,7 @@ mongoose.connect(config.mongodb.db, {
 require('./user');
 require('./topic');
 require('./reply');
-require('./message');
 
 exports.User         = mongoose.model('User');
 exports.Topic        = mongoose.model('Topic');
 exports.Reply        = mongoose.model('Reply');
-exports.Message      = mongoose.model('Message');

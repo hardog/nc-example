@@ -6,8 +6,7 @@ let router = require('koa-router')(),
 	index = require('./controller/'),
 	user = require('./controller/user'),
 	topic = require('./controller/topic'),
-	reply = require('./controller/reply'),
-	msg = require('./controller/message');
+	reply = require('./controller/reply');
 
 module.exports = router.routes();
 
@@ -19,4 +18,8 @@ router
 .get('/registry', user.showRegistry)
 .post('/registry', user.registry)
 .get('/logout', user.logout)
-.get('/user/:id', user.userInfo);
+.get('/user/:loginname', user.userInfo)
+// 主题相关
+.get('/topic/show', topic.show)
+.post('/topic/create', topic.create)
+.get('/topic/detail/:id', topic.detail);

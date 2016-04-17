@@ -11,6 +11,7 @@ let koa = require('koa'),
 	log = require('koa-request-log'),
 	render = require('koa-ejs'),
 	errors = require('./middleware/error'),
+	userSess = require('./middleware/user_sess'),
 	app = koa();
 	
 // https://github.com/dlau/koa-body
@@ -36,6 +37,7 @@ app
 }))
 .use(errors)
 .use(session(app))
+.use(userSess)
 .use(koabody())
 .use(mount(routes))
 .use(mount(router.allowedMethods()))

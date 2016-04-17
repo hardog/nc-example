@@ -12,7 +12,8 @@ module.exports = function* (next){
 	try{
 		yield* next;
 	}catch(err){
-		errMsg = err.message;
+		console.log('err,', err);
+		errMsg = `${err.message} ${err.stack}`;
 		if(err.name === 'MongoError'){
 			code = err.code;
 		}
@@ -26,7 +27,7 @@ module.exports = function* (next){
 		yield next;
 	}else{
 		yield this.render('error', {
-			config: config,
+			config,
 			errors: `${errCodes[code]} ${errMsg || ''}`
 		});
 	}

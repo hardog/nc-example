@@ -1,3 +1,81 @@
+// create topic
+.topic{
+	margin-right: 20px;
+	padding: 40px 20px;
+	background-color: #fff;
+	border-radius: 3px;
+	font-size: 14px;
+	
+	.title{
+		margin-bottom: 10px;
+
+		input{
+			font-size: 20px;
+		}
+	}
+
+	.edit{
+		font-size: 16px;
+		margin: 10px;
+		border: #eee solid 1px;
+	}
+
+	.creatTopic{
+		.btn;
+		margin-left: 0;
+	}
+}
+
+// topic list
+.items{
+	padding: 0 5px;
+
+	>div{
+		height: 50px;
+		padding: 17px;
+		margin: 5px 0;
+		border-radius: 3px;
+		position: relative;
+		background-color: #fff;
+		box-sizing: border-box;
+	
+		span{
+			color: #777;
+			font-size: 12px;
+			top: 17px;
+			right: 10px;
+			position: absolute;
+
+			&.notopics{
+				left: 10px;
+				font-size: 16px;
+				line-height: 16px;
+				color: #333;
+			}
+		}
+
+		>a{
+			line-height: 20px;
+			text-decoration: none;
+			font-size: 16px;
+			padding: 0;
+			color: #333;
+			
+			&:first-child{
+				margin-right: 20px;
+			}
+
+			&:visited{
+				color: #888;
+			}
+
+			&:hover{
+				text-decoration: underline;
+			}
+		}
+	}
+}
+
 // registry
 .registry{
 	margin-right: 20px;
@@ -42,16 +120,7 @@
 
 	.userLogin,
 	.registryUser{
-	    margin-left: 150px;
-	    border-radius: 3px;
-	    background-color: #08c;
-	    padding: 3px 10px;
-	    color: #fff;
-	    border: none;
-	    cursor: pointer;
-	    line-height: 28px;
-	    width: 80px;
-        font-size: inherit;
+	    .btn
 	}
 
 	.notEmpty{

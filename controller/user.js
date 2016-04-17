@@ -9,25 +9,22 @@ let config = require('../config'),
 
 // 显示登录界面
 exports.showLogin = function* (){
-	let u = this.session.user || {},
-		data = {config};
+	let data = {
+			config,
+			user: this.session.user
+		};
 
-	yield Promise.resolve()
-	.then(() => User.findOne({loginname: u.loginname}))
-	.then((user) => {
-		if(user){
-			data.user = user;
-			return co(this.render('index', data));
-		}else{
-			return co(this.render('login', data));
-		}
-	});
+	if(data.user){
+		yield Promise.resolve()
+		.then(() => this.redirect('/'));
+	}else{
+		yield this.render('login', data);
+	}
 };
 
 // 登录提交
 exports.login = function* (){
 	let data = {config},
-		isOk = false, tpl = 'index',
 		req = this.request.body,
 		loginname = req.loginname,
 		password = md5(req.password);
@@ -36,21 +33,21 @@ exports.login = function* (){
 	.then(() => User.findOne({loginname: loginname}))
 	.then((user) => {
 		if(user && (password === user.password)){
-			this.session.user = {loginname};
-			data.user = user;
-			isOk = true;
+			this.session.loginname = loginname;
+			this.redirect('/');
 		}else{
-			tpl = 'login';
 			data.errMsg = 'please check name & password';
+			return co(this.render('login', data));
 		}
-
-		return Promise.resolve();
-	})
-	.then(() => co(this.render(tpl, data)));
+	});
 };
 
 // 显示注册页面
 exports.showRegistry = function* (){
+	if(this.session.user){
+		this.redirect('/');
+	}
+
 	yield this.render('registry', {config});
 };
 
@@ -67,13 +64,12 @@ exports.registry = function* (){
 	let user = new User();
 	user.name = uname;
 	user.loginname = loginname;
-	// TODO md5 加密
 	user.password = pass;
 	user.email = email;
 	user.signature = signature;
 
 	// add session
-	this.session.user = {loginname};
+	this.session.loginname = loginname;
 	data.user = user;
 
 	yield Promise.resolve()
@@ -84,23 +80,22 @@ exports.registry = function* (){
 // 退出登录
 exports.logout = function* (){
 	this.session.user = undefined;
-	yield co(this.render('index', {config}));
+	this.session.loginname = undefined;
+	this.redirect('/');
 };
 
 // 查看用户个人信息
 exports.userInfo = function* (){
-	let u = this.session.user || {},
-		loginname = u.loginname,
+	let loginname = this.params.loginname,
 		data = {config};
 
 	yield Promise.resolve()
 	.then(() => User.findOne({loginname: loginname}))
 	.then((user) => {
-		if(user){
+		data.userintro = user;
+		if(this.session.user){
 			data.user = user;
 		}
-
-		return Promise.resolve();
 	})
 	.then(() => co(this.render('user', data)))
 };

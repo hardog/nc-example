@@ -1,0 +1,18 @@
+<div class="topic">
+	<% if(locals.user){ %>
+	<form action="/topic/create" method="post">
+		<div class="title">
+			<span>Topic标题: </span>
+			<input type="text" name="title"/>
+		</div>
+		<div class="edit">
+			<textarea id="editor" name="content"></textarea>
+		</div>
+		<input type="submit" value="提交" class="creatTopic"/>
+	</form>
+	<!-- scripts -->
+	<script data-main="topic" src="<%= config.siteUrl %>lib/require.js"></script>
+	<% }else{ %>
+	请先<a href="/login">登陆</a>, Thanks!
+	<% } %>
+</div>

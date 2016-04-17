@@ -1,4 +1,15 @@
-<div>
-<%= config.title %>
-	topic list!
+<div class="items">
+	<% var topics = locals.topics || [] %>
+	<% topics.forEach(function(v){ %>
+	<div>
+		<a href='/user/<%= v.author %>'><%= v.author %></a>
+		<a href='/topic/detail/<%= v._id %>'><%= v.title %></a>
+		<span><%= v.createAt %></span>
+	</div>
+	<% }) %>
+	<% if(topics.length === 0){ %>
+	<div><span class="notopics">暂无主题</span></div>
+	<% } %>
 </div>
+<!-- scripts -->
+<script data-main="index" src="<%= config.siteUrl %>lib/require.js"></script>

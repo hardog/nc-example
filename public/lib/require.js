@@ -2140,3 +2140,13 @@ var requirejs, require, define;
     //Set up with config info.
     req(cfg);
 }(this));
+
+// custom define
+requirejs.config({
+    baseUrl: '/scripts',
+    paths: {
+        jquery: '../lib/jquery.min',
+        cm: '../lib/codemirror',
+        cmmode: '../lib/cmmarkdown'
+    }
+});
