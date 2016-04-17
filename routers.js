@@ -22,4 +22,6 @@ router
 // 主题相关
 .get('/topic/show', topic.show)
 .post('/topic/create', topic.create)
-.get('/topic/detail/:id', topic.detail);
+.get('/topic/detail/:id', topic.detail)
+// 主题回复相关
+.post('/reply/create', reply.create);

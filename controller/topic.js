@@ -6,8 +6,10 @@ let config = require('../config'),
 	MarkdownIt = require('markdown-it'),
     md = new MarkdownIt(),
     moment = require('moment'),
+    _ = require('underscore'),
 	User = require('../models').User,
-	Topic = require('../models').Topic;
+	Topic = require('../models').Topic,
+	Reply = require('../models').Reply;
 
 // 显示创建主题页
 exports.show = function* (){
@@ -51,12 +53,24 @@ exports.detail = function* (){
 	.then(() => Topic.findOne({_id: topicId}))
 	.then((topic) => {
 		data.topic = {
+			_id: topic._id,
 			title: topic.title,
 			author: topic.author,
 			content: md.render(topic.content),
-			createAt: moment(topic.createAt).fromNow()
+			createAt: moment(topic.createAt).fromNow(),
 		};
 		return Promise.resolve();
+	})
+	.then(() => Reply.find({topicId: topicId}).sort({'createAt':-1}))
+	.then((replys) => {
+		data.topic.replys = [];
+		_.each(replys, (v) => {
+			data.topic.replys.push({
+				replyer: v.replyer,
+				content: v.content,
+				createAt: moment(v.createAt).fromNow()
+			});
+		});
 	})
 	.then(() => co(this.render('topic', data)));
 };

@@ -1,18 +1,32 @@
-<div class="markdown-text">
+<div class="topic">
 	<span class="topicTitle"><%= topic.title %></span>
 	<div class="topicAside">
 		<span><a href="/user/<%= topic.author %>"><%= topic.author %></a></span>
 		<span>/ <%= topic.createAt %></span>
 	</div>
-	<div class="topicContent">
+	<div class="markdown-text topicContent">
 		<%- topic.content %>
 	</div>
+	<div class="replys">
+		<% topic.replys.forEach(function(v){ %>
+		<div class="reply">
+			<div class="footnote">
+				<a href="/user/<%= v.replyer %>"><%= v.replyer %></a>
+				<span>/ <%= v.createAt %></span>
+			</div>
+			<%- v.content %>
+		</div>
+		<% }) %>
+	</div>
+	<% if(locals.user){ %>
 	<div class="replyEditor">
 		<form action="/reply/create" method="post">
+			<input type="hidden" name="topicId" value="<%= topic._id %>"/>
 			<textarea id="editor" name="content"></textarea>
 			<input type="submit" value="提交" class="creatReply"/>
 		</form>
 	</div>
 	<!-- scripts -->
 	<script data-main="reply" src="<%= config.siteUrl %>lib/require.js"></script>
+	<% } %>
 </div>

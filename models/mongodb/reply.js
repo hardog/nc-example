@@ -7,7 +7,7 @@ let mongoose  = require('mongoose'),
 let replySchema = new Schema({
   content: String,
   topicId: ObjectId,
-  authorId: ObjectId,
+  replyer: String,
   createAt: { type: Date, default: Date.now }
 });
 

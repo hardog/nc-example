@@ -8,7 +8,6 @@ let topicSchema = new Schema({
   content: String,
   author: String,
   createAt: { type: Date, default: Date.now },
-  updateAt: { type: Date, default: Date.now },
 });
 
 mongoose.model('Topic', topicSchema);

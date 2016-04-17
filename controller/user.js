@@ -87,15 +87,13 @@ exports.logout = function* (){
 // 查看用户个人信息
 exports.userInfo = function* (){
 	let loginname = this.params.loginname,
-		data = {config};
+		data = {
+			config,
+			user: this.session.user
+		};
 
 	yield Promise.resolve()
 	.then(() => User.findOne({loginname: loginname}))
-	.then((user) => {
-		data.userintro = user;
-		if(this.session.user){
-			data.user = this.session.user;
-		}
-	})
+	.then((user) => {data.userintro = user;})
 	.then(() => co(this.render('user', data)))
 };
