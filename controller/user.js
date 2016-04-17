@@ -74,7 +74,7 @@ exports.registry = function* (){
 
 	yield Promise.resolve()
 	.then(() => user.save())
-	.then(() => co(this.render('index', data)));
+	.then(() => this.redirect('/'));
 };
 
 // 退出登录
@@ -94,7 +94,7 @@ exports.userInfo = function* (){
 	.then((user) => {
 		data.userintro = user;
 		if(this.session.user){
-			data.user = user;
+			data.user = this.session.user;
 		}
 	})
 	.then(() => co(this.render('user', data)))

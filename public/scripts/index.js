@@ -1,4 +1,4 @@
 // deal logic
-require(['jquery'], function($){
+define(['jquery'], function($){
 
 });

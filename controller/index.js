@@ -15,7 +15,7 @@ exports.showIndex = function* (){
 		};
 
 	yield Promise.resolve()
-	.then(() => Topic.find())
+	.then(() => Topic.find().sort({'createAt':-1}))
 	.then((topics) => {
 		let tps = [];
 		

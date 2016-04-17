@@ -3,6 +3,9 @@
 let config = require('../config'),
 	co = require('co'),
 	md5 = require('md5'),
+	MarkdownIt = require('markdown-it'),
+    md = new MarkdownIt(),
+    moment = require('moment'),
 	User = require('../models').User,
 	Topic = require('../models').Topic;
 
@@ -33,7 +36,7 @@ exports.create = function* (){
 
 	yield Promise.resolve()
 	.then(() => topic.save())
-	.then((topic) => this.redirect(`/topic/${topic._id}`));
+	.then((topic) => this.redirect(`/topic/detail/${topic._id}`));
 };
 
 // 话题详情
@@ -44,5 +47,16 @@ exports.detail = function* (){
 			user: this.session.user
 		};
 		
-	yield this.render('topic', data);
+	yield Promise.resolve()
+	.then(() => Topic.findOne({_id: topicId}))
+	.then((topic) => {
+		data.topic = {
+			title: topic.title,
+			author: topic.author,
+			content: md.render(topic.content),
+			createAt: moment(topic.createAt).fromNow()
+		};
+		return Promise.resolve();
+	})
+	.then(() => co(this.render('topic', data)));
 };

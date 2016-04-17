@@ -1,3 +1,18 @@
 <div class="markdown-text">
-	hello this is detail topic
+	<span class="topicTitle"><%= topic.title %></span>
+	<div class="topicAside">
+		<span><a href="/user/<%= topic.author %>"><%= topic.author %></a></span>
+		<span>/ <%= topic.createAt %></span>
+	</div>
+	<div class="topicContent">
+		<%- topic.content %>
+	</div>
+	<div class="replyEditor">
+		<form action="/reply/create" method="post">
+			<textarea id="editor" name="content"></textarea>
+			<input type="submit" value="提交" class="creatReply"/>
+		</form>
+	</div>
+	<!-- scripts -->
+	<script data-main="reply" src="<%= config.siteUrl %>lib/require.js"></script>
 </div>
