@@ -10,14 +10,15 @@ let koa = require('koa'),
 	router = require('koa-router')(),
 	log = require('koa-request-log'),
 	render = require('koa-ejs'),
+	compress = require('koa-compress'),
+	conditional = require('koa-conditional-get'),
+	etag = require('koa-etag'),
 	errors = require('./middleware/error'),
 	userSess = require('./middleware/user_sess'),
 	app = koa();
 	
-// https://github.com/dlau/koa-body
 let publicPath = path.join(__dirname, 'public');
 let routes = require('./routers');
-// TODO 加上缓存
 
 // add view render
 render(app, {
@@ -39,6 +40,9 @@ app
 .use(session(app))
 .use(userSess)
 .use(koabody())
+.use(conditional())
+.use(etag())
+.use(compress({threshold: 2048}))
 .use(mount(routes))
 .use(mount(router.allowedMethods()))
 .use(function* (){
