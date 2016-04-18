@@ -15,7 +15,7 @@ let config = {
 
     // mongodb 配置
     mongodb: {
-      db: 'mongodb://127.0.0.1/nc-example',
+      db: 'mongodb://localhost/nc-example',
       poolSize: 5
     }
 };
