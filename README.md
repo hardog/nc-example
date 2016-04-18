@@ -22,6 +22,7 @@ an simple nodeclub example project realize by koa
 
 项目特性列表如下:
 
+- requirejs客户端
 - mongoose数据存储
 - koa-ejs页面渲染
 - koa-router处理路由
