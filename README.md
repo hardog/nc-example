@@ -37,24 +37,24 @@ an simple nodeclub example project realize by koa
 
 - 首页
 
-[首页](http://www.startexample.com/images/assist/20160417/index.png)
+![首页](http://www.startexample.com/images/assist/20160417/index.png)
 
 - 主题详情
 
-[主题详情](http://www.startexample.com/images/assist/20160417/topicDetail.png)
+![主题详情](http://www.startexample.com/images/assist/20160417/topicDetail.png)
 
 - 主题发表
 
-[主题发表](http://www.startexample.com/images/assist/20160417/publishTopic.png)
+![主题发表](http://www.startexample.com/images/assist/20160417/publishTopic.png)
 
 - 主题回复
 
-[主题回复](http://www.startexample.com/images/assist/20160417/reply.png)
+![主题回复](http://www.startexample.com/images/assist/20160417/reply.png)
 
 - 用户登录
 
-[用户登录](http://www.startexample.com/images/assist/20160417/login.png)
+![用户登录](http://www.startexample.com/images/assist/20160417/login.png)
 
 - 用户注册
 
-[用户注册](http://www.startexample.com/images/assist/20160417/registry.png)
+![用户注册](http://www.startexample.com/images/assist/20160417/registry.png)
