@@ -1,39 +1,7 @@
 ## NC-EXAMPLE
 an simple nodeclub example project realize by koa
 
-## startup
-
-1. clone本项目
-2. 准备项目环境
-
-	- `node v4.3.0`
-	- `mongodb v3.0.7`
-
-3. 修改项目根目录下配置文件`config.js`
-4. 安装项目依赖
-
-	- `$npm install`
-
-5. 启动项目
-
-	- `$node app`
-
-## feature
-
-项目特性列表如下:
-
-- requirejs客户端
-- mongoose数据存储
-- koa-ejs页面渲染
-- koa-router处理路由
-- koa-session控制用户登录
-- koa-send控制静态文件访问
-- koa-compress启用gzip压缩
-- koa-request-log记录请求日志
-- koa-less使用less编译样式文件
-- koa-etag/koa-conditional-get添加缓存功能
-
-## showing
+## SHOWING
 
 - 首页
 
@@ -58,3 +26,41 @@ an simple nodeclub example project realize by koa
 - 用户注册
 
 ![用户注册](http://www.startexample.com/images/assist/20160417/registry.png)
+
+## STARTUP
+
+1. clone本项目
+2. 准备项目环境
+
+	- `node v4.3.0`
+	- `mongodb v3.0.7`
+
+3. 修改项目根目录下配置文件`config.js`
+4. 安装项目依赖
+
+	- `$npm install`
+
+5. 启动项目
+
+	- `$node app`
+
+## FEATURES
+
+项目特性列表如下:
+
+- requirejs客户端
+- mongoose数据存储
+- koa-ejs页面渲染
+- koa-router处理路由
+- koa-session控制用户登录
+- koa-send控制静态文件访问
+- koa-compress启用gzip压缩
+- koa-request-log记录请求日志
+- koa-less使用less编译样式文件
+- koa-etag/koa-conditional-get添加缓存功能
+
+## TODO
+
+- `编写项目测试代码`
+- `客户端宽度自适应`
+- `移动端适应`
