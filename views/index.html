@@ -2,7 +2,7 @@
 	<% var topics = locals.topics || [] %>
 	<% topics.forEach(function(v){ %>
 	<div>
-		<a href='/user/<%= v.author %>'><%= v.author %></a>
+		<a href='/user/<%= v.author %>'>@<%= v.author %></a>
 		<a href='/topic/detail/<%= v._id %>'><%= v.title %></a>
 		<span><%= v.createAt %></span>
 	</div>
