@@ -1,7 +1,7 @@
 # ignore nodejs install module
 node_modules/
 
-*.log
+logs/*.log
 
 # ignore mysql model
 models/mysql/*.js
