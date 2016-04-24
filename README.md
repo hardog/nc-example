@@ -62,6 +62,5 @@ an simple nodeclub example project realize by koa
 ## TODO
 
 - `编写项目测试代码`
-- `客户端宽度自适应`
 - `移动端适应`
 - `完善koa-request-log`库
