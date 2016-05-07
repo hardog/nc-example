@@ -5,8 +5,6 @@ let co 		= require('co');
 let md5 	= require('md5');
 let User 	= require('../models').User;
 
-// nodeclub is extract to proxy
-
 // 显示登录界面
 exports.showLogin = function* (){
 	let data = {

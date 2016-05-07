@@ -4,7 +4,7 @@ let User 	= require('../models/').User;
 let expect 	= require('chai').expect;
 
 // avoid loginname,email conflict
-let randomNum = parseInt(Math.random() * 100);
+let randomNum = parseInt(Math.random() * 1000);
 
 describe('test/models/user.js', () => {
 	it('should insert an user into mongodb', (done) => {

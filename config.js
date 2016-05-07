@@ -6,7 +6,7 @@
 let config = {
     // site basic information
     title: 'nc-example',
-    siteUrl: 'http://localhost:3000/',
+    siteUrl: 'http://localhost:3000',
     description: 'just a koa nodeclub example',
     keywords: 'koa, es6, nodeclub',
 

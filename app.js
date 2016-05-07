@@ -52,9 +52,12 @@ app
 });
 
 // listen on port 3000
-app.listen(3000);
+if(!module.parent){
+	app.listen(3000);
+	require('colors');
+	console.log('nc-example running at http://localhost:3000'.green);
+	console.log('Node Version: v4.3.0, MongoDB: v3.0.7'.green);
+	console.log('God bless you ~'.green);
+}
 
-require('colors');
-console.log('nc-example running at http://localhost:3000'.green);
-console.log('Node Version: v4.3.0, MongoDB: v3.0.7'.green);
-console.log('God bless you ~'.green);
+module.exports = app;
