@@ -1,9 +1,9 @@
 'use strict';
 
-let config = require('../config'),
-	co = require('co'),
-	md5 = require('md5'),
-	User = require('../models').User;
+let config 	= require('../config');
+let co 		= require('co');
+let md5 	= require('md5');
+let User 	= require('../models').User;
 
 // nodeclub is extract to proxy
 
@@ -24,10 +24,10 @@ exports.showLogin = function* (){
 
 // 登录提交
 exports.login = function* (){
-	let data = {config},
-		req = this.request.body,
-		loginname = req.loginname,
-		password = md5(req.password);
+	let data = {config};
+	let req = this.request.body;
+	let loginname = req.loginname;
+	let password = md5(req.password);
 
 	yield Promise.resolve()
 	.then(() => User.findOne({loginname: loginname}))
@@ -53,15 +53,16 @@ exports.showRegistry = function* (){
 
 // 用户注册
 exports.registry = function* (){
-	let data = {config},
-		req = this.request.body,
-		uname = req.username,
-		loginname = req.loginname,
-		email = req.email,
-		pass = md5(req.password),
-		signature = req.signature;
+	let data = {config};
+	let req = this.request.body;
+	let uname 		= req.username;
+	let loginname 	= req.loginname;
+	let email 		= req.email;
+	let signature 	= req.signature;
+	let pass 	= md5(req.password);
 
 	let user = new User();
+
 	user.name = uname;
 	user.loginname = loginname;
 	user.password = pass;
@@ -86,8 +87,8 @@ exports.logout = function* (){
 
 // 查看用户个人信息
 exports.userInfo = function* (){
-	let loginname = this.params.loginname,
-		data = {
+	let loginname = this.params.loginname;
+	let data = {
 			config,
 			user: this.session.user
 		};

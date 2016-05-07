@@ -1,24 +1,24 @@
 'use strict';
 
-let koa = require('koa'),
-	path = require('path'),
-	send = require('koa-send'),
-	less = require('koa-less'),
-	mount = require('koa-mount'),
-	koabody = require('koa-body'),
-	session = require('koa-session'),
-	router = require('koa-router')(),
-	log = require('koa-request-log'),
-	render = require('koa-ejs'),
-	compress = require('koa-compress'),
-	conditional = require('koa-conditional-get'),
-	etag = require('koa-etag'),
-	errors = require('./middleware/error'),
-	userSess = require('./middleware/user_sess'),
-	app = koa();
-	
+let koa 	 	= require('koa');
+let path 	 	= require('path');
+let send 	 	= require('koa-send');
+let less 	 	= require('koa-less');
+let mount 	 	= require('koa-mount');
+let koabody  	= require('koa-body');
+let session  	= require('koa-session');
+let router 	 	= require('koa-router')();
+let log 	 	= require('koa-request-log');
+let render 	 	= require('koa-ejs');
+let compress 	= require('koa-compress');
+let etag 	 	= require('koa-etag');
+let errors 	 	= require('./middleware/error');
+let userSess 	= require('./middleware/user_sess');
+let conditional = require('koa-conditional-get');
+let routes 		= require('./routers');
+
+let app = koa();
 let publicPath = path.join(__dirname, 'public');
-let routes = require('./routers');
 
 // add view render
 render(app, {

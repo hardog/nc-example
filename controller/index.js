@@ -1,11 +1,11 @@
 'use strict';
 
-let config = require('../config'),
-	co = require('co'),
-	_ = require('underscore'),
-	moment = require('moment'),
-	User = require('../models').User,
-	Topic = require('../models').Topic;
+let config 	= require('../config');
+let co 		= require('co');
+let _ 		= require('underscore');
+let moment 	= require('moment');
+let User 	= require('../models').User;
+let Topic 	= require('../models').Topic;
 
 // 显示首页
 exports.showIndex = function* (){

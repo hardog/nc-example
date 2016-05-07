@@ -1,11 +1,11 @@
 define(['jquery'], function($){
 	// list all registry forms
-	var $username = $('input[name=username]'),
-		$loginname = $('input[name=loginname]'),
-		$email = $('input[name=email]'),
-		$password = $('input[name=password]'),
-		$confirmpass = $('input[name=confirmpass]'),
-		$signature = $('input[name=signature]');
+	var $username 	 = $('input[name=username]');
+	var $loginname 	 = $('input[name=loginname]');
+	var $email 		 = $('input[name=email]');
+	var $password 	 = $('input[name=password]');
+	var $confirmpass = $('input[name=confirmpass]');
+	var $signature 	 = $('input[name=signature]');
 
 	var validateEmpty = function(val, ctx){
 		if(!$.trim(val)){
@@ -15,8 +15,8 @@ define(['jquery'], function($){
 		}
 	};
 
-	var blurs = [$username, $loginname, $email, $password, $confirmpass],
-		len = blurs.length;
+	var blurs = [$username, $loginname, $email, $password, $confirmpass];
+	var len   = blurs.length;
 
 	for(var i = 0; i < len; i++){
 		blurs[i].blur(function(){
@@ -26,8 +26,8 @@ define(['jquery'], function($){
 	
 	// 验证确认密码
 	$confirmpass.blur(function(){
-		var val = $(this).val(),
-			confirmpass = $password.val();
+		var val = $(this).val();
+		var confirmpass = $password.val();
 
 		if($.trim(val) !== $.trim(confirmpass)){
 			alert('两次输入密码不一致');
@@ -38,6 +38,7 @@ define(['jquery'], function($){
 	// submit form
 	$('.registryUser').click(function(){
 		var hasError = $('.notEmpty').length;
+		
 		if(!hasError){
 			$(this).parent().submit();
 		}

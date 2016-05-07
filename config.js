@@ -10,7 +10,7 @@ let config = {
     description: 'just a koa nodeclub example',
     keywords: 'koa, es6, nodeclub',
 
-    // use dialect
+    // use dialect, primiary for multi db
     useDialect: 'mongodb',
 
     // mongodb 配置

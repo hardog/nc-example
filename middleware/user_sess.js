@@ -1,11 +1,11 @@
 'use strict';
 
-let path = require('path'),
-	User = require('../models').User;
+let path = require('path');
+let User = require('../models').User;
 
 // 需要过滤的文件后缀
 let filterSuffix = [
-	'.ico', '.js', '.css', 
+	'.ico', '.js', 	 '.css', 
 	'.jpg', '.jpeg', '.png', 
 	'.gif'
 ];
@@ -15,9 +15,9 @@ module.exports = function* (next){
 	if(filterSuffix.indexOf(path.extname(this.request.url)) !== -1){
 		yield next;
 	}else{
-		let loginname = this.session.loginname,
-			url = this.request.url,
-			userPromise = Promise.resolve();
+		let loginname 	= this.session.loginname;
+		let url 		= this.request.url;
+		let userPromise = Promise.resolve();
 
 		// 静态文件过滤
 		if(loginname){

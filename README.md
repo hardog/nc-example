@@ -59,7 +59,7 @@ an simple nodeclub example project realize by koa
 - koa-less使用less编译样式文件
 - koa-etag/koa-conditional-get添加缓存功能
 
-## TODO
+## TEST
 
-- `编写项目测试代码`
-- `移动端适应`
+进入项目根目录输入以下命令即可:
+`$ mocha`
