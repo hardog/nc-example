@@ -4,7 +4,7 @@
   "description": "a example for nodejs mock nodeclub(nc)",
   "main": "app.js",
   "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "./node_modules/mocha/bin/mocha --reporter spec --timeout 10000 -c $(find ./test -name \"*.js\")"
   },
   "keywords": [
     "nodeclub",
