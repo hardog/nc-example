@@ -20,4 +20,5 @@ services:
 before_install:
   - $CXX --version
 
-script: npm test
+script: npm run-script test-cov
+after_success: npm i codecov && codecov

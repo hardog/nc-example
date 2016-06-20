@@ -4,7 +4,7 @@
   "description": "a example for nodejs mock nodeclub(nc)",
   "main": "app.js",
   "scripts": {
-    "test": "./node_modules/mocha/bin/mocha --reporter spec --timeout 10000 -c $(find ./test -name \"*.js\")"
+    "test-cov": "node ./node_modules/.bin/istanbul cover --preserve-comments ./node_modules/.bin/_mocha -- --reporter spec --timeout 10000 -c $(find ./test -name \"*.js\")"
   },
   "keywords": [
     "nodeclub",
@@ -37,7 +37,8 @@
   "devDependencies": {
     "chai": "^3.5.0",
     "mocha": "2.4.5",
-    "supertest": "^1.2.0"
+    "supertest": "^1.2.0",
+     "istanbul": "0.4.3"
   },
   "author": "Frand",
   "license": "MIT"

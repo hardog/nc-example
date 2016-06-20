@@ -1,6 +1,8 @@
 ## NC-EXAMPLE
-an simple nodeclub example project realize by koa
+
 [![Build Status](https://travis-ci.org/ncuzp/nc-example.svg?branch=master)](https://travis-ci.org/ncuzp/nc-example)
+[![codecov.io](https://img.shields.io/codecov/c/github/cnodejs/nodeclub/master.svg?style=flat-square)](https://codecov.io/gh/ncuzp/nc-example?branch=master)
+**an simple nodeclub example project realize by koa**
 
 ## SHOWING
 
