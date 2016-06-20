@@ -21,4 +21,5 @@ before_install:
   - $CXX --version
 
 script: npm run-script test-cov
-after_success: npm i codecov && codecov
+after_success:
+  - bash <(curl -s https://codecov.io/bash)
