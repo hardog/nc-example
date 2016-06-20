@@ -1,5 +1,6 @@
 ## NC-EXAMPLE
 an simple nodeclub example project realize by koa
+[![Build Status](https://travis-ci.org/ncuzp/nc-example.svg?branch=master)](https://travis-ci.org/ncuzp/nc-example)
 
 ## SHOWING
 
