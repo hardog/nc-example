@@ -1,6 +1,6 @@
 ## NC-EXAMPLE
 
-[![Build Status](https://travis-ci.org/ncuzp/nc-example.svg?branch=master)](https://travis-ci.org/ncuzp/nc-example)
+[![Build Status](https://travis-ci.org/hardog/nc-example.svg?branch=master)](https://travis-ci.org/hardog/nc-example)
 **an simple nodeclub example project realize by koa**
 
 ## SHOWING
